@@ -9,31 +9,33 @@
 
 .logo a {
     height: 50px; /* Adjust size as needed */
+    color: #1EB649;
+    font-size: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none; 
 }
-
-.logo img {
-    height: 50px; /* Adjust size as needed */
-  }
   
-  .nav-links {
+.nav-links {
     list-style: none;
     display: flex;
+    font-weight: bold;
     gap: 20px; /* Space between links */
     padding: 0;
     margin: 0;
-  }
+}
   
-  .nav-links li {
+.nav-links li {
     display: inline;
-  }
-  
-  .nav-links a {
+}
+
+.nav-links a {
     text-decoration: none;
     color: #333;
-    font-weight: bold;
     transition: color 0.3s;
-  }
-  
-  .nav-links a:hover {
+    cursor: pointer;
+}
+
+.nav-links a:hover {
     color: #007bff; /* Change hover color */
-  }
+}
