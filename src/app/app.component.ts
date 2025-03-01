@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { IndayStoreNavbarComponent } from "./shared/inday-store-navbar/inday-store-navbar.component";
-import { Product } from './products/product.model';
 
 @Component({
   selector: 'app-root',
