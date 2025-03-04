@@ -26,7 +26,7 @@ export class IndayStoreProductsComponent implements OnInit {
     this.productService.getProductList()
     .subscribe(data => {
       this.productList = data;
-    })
+    });
   }
 
   private getColDefs(): void {
