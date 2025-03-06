@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './inday-store-dashboard.component.css'
 })
 export class IndayStoreDashboardComponent {
-
+  message: string = 'We are still working on it. Stay tuned! :)';
 }
