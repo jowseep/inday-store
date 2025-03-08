@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { TransactionService } from '../transaction.service';
 import { Transaction } from '../transaction.model';
 import { ColDef } from 'ag-grid-community';
 import { AgGridAngular } from 'ag-grid-angular';
+import { MatDialog } from '@angular/material/dialog';
+import { IndayStoreAddTransactionComponent } from '../inday-store-add-transaction/inday-store-add-transaction.component';
 
 @Component({
   selector: 'app-inday-store-transactions',
@@ -13,6 +15,7 @@ import { AgGridAngular } from 'ag-grid-angular';
 export class IndayStoreTransactionsComponent implements OnInit {
   transactionList: Transaction[] = [];
   colDefs: ColDef[] = [];
+  readonly dialog = inject(MatDialog);
 
   constructor(private readonly transactionService: TransactionService) {
   }
@@ -20,6 +23,18 @@ export class IndayStoreTransactionsComponent implements OnInit {
   ngOnInit(): void {
     this.setTransactionList();
     this.getColDefs();
+  }
+
+  addTransaction(): void {
+    const dialogRef = this.dialog.open(
+      IndayStoreAddTransactionComponent, {
+      height: '400px',
+      width: '400px',
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('Dialog is closed ', result);
+    });
   }
 
   private getColDefs(): void {
