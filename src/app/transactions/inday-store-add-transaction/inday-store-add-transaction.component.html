@@ -1,1 +1,7 @@
-<p>inday-store-add-transaction works!</p>
+<form [formGroup]="addTransactionForm" (ngSubmit)="submit()">
+    <label for="borrower">Borrower</label>
+    <input id="borrower" type="text" formControlName="borrower">
+    <label for="borrower">Item</label>
+    <input id="item" type="text" formControlName="item">
+    <button type="submit">Submit</button>
+</form>
